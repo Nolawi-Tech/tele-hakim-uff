@@ -1,33 +1,98 @@
-from django.http.response import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from django.conf import settings
-import json
+from django.shortcuts import render
+import requests
 
+def home(request):
+    return render(request, 'pay/home.html')
 
-@csrf_exempt
-def chapa_webhook(request):
-    # who knows what kind of request we are getting
-    if request.method != 'POST':
-        return JsonResponse(
-            {
-                'errors': 'only POST method allowed'
-            },
-            status=400,
-        )
+def payment_with_cart(request):
+    obj = {
+        "process": "Cart",
+        "successUrl": "http://localhost:8000/success",
+        "ipnUrl": "http://localhost:8000/ipn",
+        "cancelUrl": "http://localhost:8000/cancel",
+        "merchantId": "22429",
+        "merchantOrderId": "l710.0",
+        "expiresAfter": 24,
+        "totalItemsDeliveryFee": 19,
+        "totalItemsDiscount": 1,
+        "totalItemsHandlingFee": 12,
+        "totalItemsTax1": 250,
+        "totalItemsTax2": 0
+    }
+    cart = {
+        "cartitems": [
 
-    try:
-        data = json.loads(request.body)
-    except json.decoder.JSONDecodeError:
-        return JsonResponse(
-            {
-                'error': "Invalid Json Body"
-            },
-            status=400
-        )
-    
-    model = settings.CHAPA_TRANSACTION_MODEL
-    # add your webhook events here and also you can override the model
-    model.response_dump = data
-    model.save()
-    # TODO: this method should be class view for customization support
-    return JsonResponse(data)
+        {
+
+            "itemId":"sku-01",
+
+            "itemName":"sample item",
+
+            "unitPrice":2300,
+
+            "quantity":1
+
+        },
+
+        {
+
+            "itemId":"sku-02",
+
+            "itemName":"sample item 2",
+
+            "unitPrice":2300,
+
+            "quantity":2
+
+        }
+
+        ]
+    }
+    return render(request, 'pay/index-cart.html', {'obj': obj, 'cart': cart})
+
+def payment_with_express(request):
+    obj = {
+        "process": "Express",
+        "successUrl": "http://localhost:8000/success",
+        "ipnUrl": "http://localhost:8000/ipn",
+        "cancelUrl": "http://localhost:8000/cancel",
+        "merchantId": "SB2261",
+        "merchantOrderId": "l710.0",
+        "expiresAfter": 24,
+        "itemId": 60,
+        "itemName": "Billing",
+        "unitPrice": 11.0,
+        "quantity": 1,
+        "discount": 0.0,
+        "handlingFee": 0.0,
+        "deliveryFee": 0.0,
+        "tax1": 0.0,
+        "tax2": 0.0
+    }
+    return render(request, 'pay/index-express.html', {'obj': obj})
+
+def success(request):
+    ii= request.GET.get('itemId')
+    total = request.GET.get('TotalAmount')
+    moi = request.GET.get('MerchantOrderId')
+    ti = request.GET.get('TransactionId')
+    status = request.GET.get('Status')
+    url = 'https://testapi.yenepay.com/api/verify/pdt/'
+    datax = {
+        "requestType": "PDT",
+        "pdtToken": "Q1woj27RY1EBsm",
+        "transactionId": ti,
+        "merchantOrderId": moi
+    }
+    x = requests.post(url, datax)
+    if x.status_code == 200:
+        print("It's Paid")
+    else:
+        print('Invalid payment process')
+    return render(request, 'pay/success.html', {'total': total, 'status': status,})
+
+def cancel(request):
+    return render(request, 'pay/cancel.html')
+
+def ipn(request):
+    return render(request, 'pay/ipn.html')
