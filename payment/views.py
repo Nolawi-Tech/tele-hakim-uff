@@ -96,3 +96,7 @@ def cancel(request):
 
 def ipn(request):
     return render(request, 'pay/ipn.html')
+
+
+def login(request):
+    name = ch

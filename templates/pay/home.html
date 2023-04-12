@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeleHakim payment</title>
-</head>
-<body>
-    <h1>Welcome to TeleHakim payment system</h1>
-    <h4>choose way to pay</h4>
-    <ul>
-        <li>
-            <a href="{% url 'express-payment' %}">Pay</a>
-        </li>
-        <!-- <li>
-            <a href="{% url 'cart-payment' %}">Pay with cart</a>
-        </li> -->
-    </ul>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      </head>
+      
+<body class="bg-primary">
+    <div class="container">
+        <div class="d-flex align-items-start"></div>
+        <div class="text-center">
+          <h1>Welcome to TeleHakim payment system</h1>
+          <h4>choose way to pay</h4>
+          <button type="button" class="btn btn-danger text-center"> <a class="btn btn-warning text-center" href="{% url 'express-payment' %}">Pay</a></button>
+          <!-- <ul>
+            <li>
+                a href="{% url 'express-payment' %}">Pay</a>
+                <a href="{% url 'cart-payment' %}">Pay with cart</a>
+            </li>
+        </ul> -->
+        </div>
+        </div>
+      </div>
+   
 </body>
 </html>
