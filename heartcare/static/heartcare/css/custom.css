@@ -222,7 +222,7 @@ body .tp0 {
 }
 
 .site-header .navbar-nav>li>a.appoint {
-	background: #bf0311;
+	background: #0408d1;
 	color: #fff;
 	text-transform: none;
 	font-size: 16px;
@@ -238,7 +238,7 @@ body .tp0 {
 }
 
 .site-header .navbar-nav>li>a.nav-search {
-	background: #bf0311;
+	background: #0408d1;
 	height: 40px;
 	width: 40px;
 	color: #fff;
@@ -257,7 +257,7 @@ body .tp0 {
 .site-header .navbar-default .navbar-nav>.open>a,
 .site-header .navbar-default .navbar-nav>.open>a:focus,
 .site-header .navbar-default .navbar-nav>.open>a:hover {
-	background: #bf0311;
+	background: #0408d1;
 	color: #fff;
 }
 
@@ -343,7 +343,7 @@ body .tp0 {
 	top: 0;
 	border-radius: 0px;
 	border: 0px;
-	background: #bf0311;
+	background: #0408d1;
 	height: 50px;
 	line-height: 50px;
 	padding: 0 20px;
@@ -372,7 +372,7 @@ body .tp0 {
 	width: 100%;
 	float: left;
 	box-shadow: none;
-	background: #bf0311;
+	background: #0408d1;
 	padding: 5px 0;
 }
 
@@ -400,7 +400,7 @@ body .tp0 {
 	font-size: 16px;
 	margin-top: 5px;
 	margin-right: 12px;
-	color: #bf0311;
+	color: #0408d1;
 }
 
 .header-service-area strong {
@@ -408,7 +408,7 @@ body .tp0 {
 	font-size: 14px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
-	color: #bf0311;
+	color: #0408d1;
 }
 
 .header-service-area li {
@@ -618,8 +618,8 @@ body .tp0 {
 
 .main-slider .owl-theme .owl-dots .owl-dot.active span,
 .main-slider .owl-theme .owl-dots .owl-dot:hover span {
-	background: #bf0311;
-	border-color: #bf0311;
+	background: #0408d1;
+	border-color: #0408d1;
 }
 
 /*****************  Header End  *****************/
@@ -652,7 +652,7 @@ body .tp0 {
 
 .features-box:hover,
 .features-box.selected {
-	background: #bf0311;
+	background: #0408d1;
 }
 
 .features-box strong {
@@ -763,7 +763,7 @@ body .tp0 {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 36px;
 	font-weight: 500;
-	color: #bf0311;
+	color: #0408d1;
 	margin: 0;
 }
 
@@ -798,7 +798,7 @@ body .tp0 {
 
 .sectio-title-2 strong {
 	font-size: 20px;
-	color: #bf0311;
+	color: #0408d1;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
 }
@@ -824,14 +824,14 @@ body .tp0 {
 	font-size: 20px;
 	font-weight: 400;
 	font-family: 'Montserrat', sans-serif;
-	color: #bf0311;
+	color: #0408d1;
 }
 
 .section-title-3 h2 {
 	font-size: 40px;
 	font-weight: 700;
 	font-family: 'Montserrat', sans-serif;
-	color: #bf0311;
+	color: #0408d1;
 	color: #222;
 	text-transform: uppercase;
 	line-height: 24px;
@@ -924,13 +924,13 @@ body .m0 {
 }
 
 .welcome-text .designation {
-	color: #bf0311;
+	color: #0408d1;
 	font-weight: 400;
 	margin-top: 12px;
 }
 
 .learn-more {
-	background: #bf0311;
+	background: #0408d1;
 	color: #fff;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;

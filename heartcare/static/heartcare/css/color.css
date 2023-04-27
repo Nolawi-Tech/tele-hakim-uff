@@ -17,7 +17,7 @@
 .home-testimonials .owl-theme .owl-dots .owl-dot.active span, .home-testimonials .owl-theme .owl-dots .owl-dot:hover span
 
   {
-	background: #bf0311;
+	background: #0408d1;
 }
 /* Text Color background: #bf0311; */
 
@@ -26,7 +26,7 @@
 .login-social li, .login-social li a, .heart-care-services .nav-tabs>li>a
 
  {
-	color: #bf0311;
+	color: #0408d1;
 }
 /* Border Color */
 
@@ -36,10 +36,10 @@
 .input-group .form-control:focus,
 .home-testimonials .owl-theme .owl-dots .owl-dot.active span, .home-testimonials .owl-theme .owl-dots .owl-dot:hover span
  {
-	border-color: #bf0311;
+	border-color: #0408d1;
 }
 
 
-.pro-box .pro-thumb {outline-color:#bf0311;}
+.pro-box .pro-thumb {outline-color:#0408d1;}
 
 /* Website Main Color End */
