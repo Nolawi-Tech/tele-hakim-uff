@@ -100,3 +100,64 @@ def ipn(request):
 
 def login(request):
     name = ch
+
+# from django.shortcuts import get_object_or_404, render, redirect
+# from django.conf import settings
+# from chapa import Chapa
+# from .models import Order
+
+# @login_required
+# def order_confirm(request, order_id):
+# """Handles initializing payment and redirecting to the payment gateway's page"""
+
+#     order = Order.objects.get(id=order_id)
+
+#     if request.method == 'POST':
+#         data = {
+#             'email': request.user.email,
+#             'amount': order.total,
+#             'first_name': request.user.first_name,
+#             'last_name': request.user.last_name,
+#             'tx_ref': order.id,
+#             # optional
+#             'callback_url': request.build_absolute_uri(
+#                 reverse('billing:success', kwargs={'order_id': order.id})
+#             ),
+#             'customization': {
+#                 'title': 'FidelBooks',
+#                 'description': 'Payment for your services',
+#             }
+#         }
+
+#         chapa = Chapa(settings.CHAPA_SECRET_KEY)
+#         response = chapa.initialize(**data)
+
+#         # after successfull response redirect to the chapa checkout_url
+#         if response['status'] == 'success':
+#             return redirect(response['data']['checkout_url'])
+#         else:
+#             messages.error(request, response['message'])
+
+#     return render(request, 'billing/order_confirm.html', {
+#         'payment_method': payment_method,
+#     })
+
+# @login_required
+# def success(request, order_id):
+# """Responsible for verifying payment and updating order status"""
+
+#     order = get_object_or_404(Order, id=order_id)
+
+#     # verify a transaction
+#     chapa = Chapa(settings.CHAPA_SECRET_KEY)
+#     response = chapa.verify(order_id)
+
+#     context = {'order': order, 'msg': response['message']}
+
+#     if response['status'] == 'success':
+#         order.status = 'UN'
+#         order.payment_status = 'PA'
+#         order.save()
+#         context['valid'] = True
+
+#     return render(request, 'billing/order_complete.html', context)
